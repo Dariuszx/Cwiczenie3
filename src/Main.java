@@ -1,9 +1,18 @@
-
+import org.jfree.ui.RefineryUtilities;
 
 public class Main {
 
     public static void main( String[] args ) {
 
+
+        Testowanie testowanie = new Testowanie( 10, 50, 100);
+
+        Wykres wykres = new Wykres( "test", testowanie );
+        wykres.pack();
+        RefineryUtilities.centerFrameOnScreen(wykres);
+        wykres.setVisible(true);
+
+        /*
         PrzezWstawianie insort = new PrzezWstawianie();
         PrzezScalanie mergeSort = new PrzezScalanie();
 
@@ -28,7 +37,7 @@ public class Main {
         RandomArray.print( tablica );
 
 
-
+*/
 
     }
 }
