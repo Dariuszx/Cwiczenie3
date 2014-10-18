@@ -3,10 +3,13 @@ public class PrzezScalanie implements SortingAlgorithm {
 
 
     private double d[], p[];
+    private long dt;
+    public int czas;
 
     private void mergeSort( int ip, int ik ) {
 
         int i_s, i1, i2, i;
+
 
         i_s = (ip + ik + 1) / 2; //Środkowy indeks tablicy
 
@@ -29,11 +32,14 @@ public class PrzezScalanie implements SortingAlgorithm {
     @Override
     public double[] sort( double[] unsortedVector ) {
 
+        dt = System.nanoTime();
         d = unsortedVector;
         p = new double[unsortedVector.length ];
 
         mergeSort( 0, unsortedVector.length - 1 );
 
+        //System.out.println( "Czas sortowania " + (System.nanoTime() - dt) / 1000 + " mikro sekund");
+        czas = (int)((System.nanoTime() - dt) / 1000);
         return d;
     }
 }

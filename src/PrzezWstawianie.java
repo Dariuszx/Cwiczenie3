@@ -1,9 +1,12 @@
 
 public class PrzezWstawianie implements SortingAlgorithm {
 
+    public int czas;
+
     @Override
     public double[] sort( double[] unsortedVector ) {
 
+        long dt = System.nanoTime();
         int i, j, size = unsortedVector.length;
         double x;
 
@@ -20,6 +23,9 @@ public class PrzezWstawianie implements SortingAlgorithm {
 
             unsortedVector[i - 1] = x;
         }
+
+        //System.out.println( "Czas sortowania " + (System.nanoTime() - dt) / 1000 + " mikro sekund");
+        czas = (int)((System.nanoTime() - dt) / 1000);
 
         return unsortedVector;
     }
